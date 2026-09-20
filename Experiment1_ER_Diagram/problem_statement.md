@@ -27,9 +27,10 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK)                        | Notes |
-|--------|--------------------------------------------|-------|
-| Member |  member id(pk), name, phone no, membership |       |  
+| Entity | Attributes (PK, FK)         |                Notes                |
+|--------|-----------------------------|-------------------------------------|
+| Member |Member ID (PK), Member Name, |  Each member has a unique Member ID |
+|        | Membership Type, Start Date |                                     |  
 |        |                                            |       |
 |        |                    |       |
 |        |                    |       |
