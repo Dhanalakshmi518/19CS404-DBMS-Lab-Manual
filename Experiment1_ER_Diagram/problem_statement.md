@@ -27,22 +27,26 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK)         |                Notes                |
-|--------|-----------------------------|-------------------------------------|
-| Member |Member ID (PK), Member Name, |  Each member has a unique Member ID |
-|        | Membership Type, Start Date |                                     |  
-|        |                                            |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-
+| Entity | Attributes (PK, FK)                               |                Notes                |
+|--------|--------------------------------------------------|-------------------------------------|
+| Member |Member ID (PK), Member Name, Membership Type, Start Date|Each member has a unique Member ID|
+|Program | Program ID (PK), Program Name|Each fitness program has a unique Program ID|
+|Trainer|Trainer ID (PK), Trainer Name, Trainer Duty Time | Time	Each trainer has a unique Trainer ID|
+|Training Session|Session ID (PK), Session Date, Session Time, Trainer ID (FK), Member ID (FK)|Links members and trainers for each session|
+|Attendance|Attendance ID (PK), Member ID (FK), Status|Tracks attendance for members|
+|Payment|Payment ID (PK), Member ID (FK), Amount|Tracks each payment transaction|
 ### Relationships and Constraints
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+|Attends|Member:N, Program:N|Total (mandatory)|Members may attend multiple programs|
+|Teach Programs|	Trainer:N, Program:N|Partial|Trainers may teach multiple programs|
+|Attend Sessions|Member:N, Training Session:N|	Partial|	Members may attend several sessions|
+|Alotted to (Trainer)|	Member:1, Trainer:N	|Partial	| Trainers allotted to several members |
+|Mark Attendance |	Member:1, Attendance:N |	Total |	Attendance is tracked per member |
+|Pay for membership |	Member:1, Payment:N	| Partial |	Members can have multiple payments |
+|Training Session-Trainer |	Trainer:1, Session:N |	Total	|Each session supervised by one trainer|
+|Training Session-Member |	Member:1, Session:N	| Total| 	Each session attended by one member|
 
 ### Assumptions
 - 
