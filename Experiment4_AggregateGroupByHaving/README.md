@@ -185,7 +185,6 @@ having MIN(workhour)<10;
 **Output:**
 
 <img width="777" height="405" alt="image" src="https://github.com/user-attachments/assets/2243a4a3-3fd3-4d72-9c4a-42a3cbff4a76" />
-**Result:**
-Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
+
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
